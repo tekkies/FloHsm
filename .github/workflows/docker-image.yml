@@ -17,8 +17,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-    - run: docker build . --file Dockerfile --tag flohsm:latest; 
-    - run: docker tag flohsm:latest finiteresource/flohsm:latest
-    - run: docker login -u finiteresource -p ${{ secrets.DOCKER_HUB_CRUD }}
-    - run: docker push finiteresource/flohsm:latest
+      run: >
+        docker build . --file Dockerfile --tag flohsm:latest
+        run: docker tag flohsm:latest finiteresource/flohsm:latest
+        run: docker login -u finiteresource -p ${{ secrets.DOCKER_HUB_CRUD }}
+        run: docker push finiteresource/flohsm:latest
 
