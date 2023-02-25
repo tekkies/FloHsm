@@ -2,17 +2,25 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master","build" ]
+    branches: [ "master", "build" ]
   pull_request:
-    branches: [ "master","build" ]
+    branches: [ "master", "build" ]
 
 jobs:
 
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: 
+    - ubuntu-latest
+    - self-hosted
 
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag flohsm:$(date +%s)
+      run: 
+      #- docker build . --file Dockerfile --tag flohsm:$(date +%s)
+      - docker build . --file Dockerfile --tag flohsm:latest
+      - docker tag flohsm:latest finiteresource/flohsm:latest
+      - docker login -u finiteresource -p ${{ secrets.DOCKER_HUB_CRUD }}
+      - docker push finiteresource/flohsm:latest
+
