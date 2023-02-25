@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag flohsm:latest; docker tag flohsm:latest finiteresource/flohsm:latest; docker login -u finiteresource -p ${{ secrets.DOCKER_HUB_CRUD }} ; docker push finiteresource/flohsm:latest
+      run: docker build . --file Dockerfile --tag flohsm:latest; docker tag flohsm:latest tekkiesuk/flohsm:latest; docker login -u tekkiesuk -p ${{ secrets.DOCKER_HUB_CRUD }} ; docker push tekkiesuk/flohsm:latest
