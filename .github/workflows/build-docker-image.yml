@@ -19,6 +19,7 @@ jobs:
         pip install pyinstaller
         pyinstaller --onefile Source/Generator/FloHsm.py
         find .
+        find /home/runner/work/FloHsm/FloHsm/dist/FloHsm
         echo ----------------------------------------
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag flohsm:latest;
