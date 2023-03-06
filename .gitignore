@@ -30,3 +30,4 @@ __pycache__
 /Source/Generated/TestActionWithArgument/StateIds.hpp
 /Source/Generated/TestActionWithArgument/StateMachine.hpp
 /Source/Generated/TestActionWithArgument/States.hpp
+.vagrant/
