@@ -1,0 +1,21 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main", "build-windows-exe" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: build-windows-exe
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build Windows Exe
+      run: |
+        Get-ChildItem -Recurse
+        pyinstaller --onefile Source/Generator/FloHsm.py
+        
