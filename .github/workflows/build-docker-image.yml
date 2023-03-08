@@ -1,4 +1,4 @@
-name: Build and Release if on main branch
+name: Build and Release Docker image if on main branch
 
 on:
   push:
