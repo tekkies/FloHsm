@@ -1,5 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+#Build: pyinstaller --noconfirm FloHsm.pyinstaller.spec
+#Test: \dist\FloHsm\FloHsm.exe "..\esp-12e-alexa-door-bell\src\esp-12e-alexa-door-bell\fsm.plantuml"
 
 block_cipher = None
 
@@ -7,7 +9,7 @@ block_cipher = None
 a = Analysis(
     ['Source\\Generator\\FloHsm.py'],
     pathex=['Source\\Generator'],
-    binaries=[],
+    binaries=[('Source\\Generator\\templates','templates')],
     datas=[],
     hiddenimports=[],
     hookspath=[],
