@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  build:
+  build-chocolatey:
 
     #Runs from Vagrant machine github-action-runners\build-windows-exe
     #  See instructions in Vagrantfile
@@ -26,7 +26,7 @@ jobs:
         Get-ChildItem flohsm.0.0.0-beta${{ github.run_number }}.nupkg
         #choco push .\flohsm.0.0.0-beta${{ github.run_number }}.nupkg --key ${{ secrets.CHOCOLATEY_API_KEY }} --source https://push.chocolatey.org/
 
-  build:
+  build-docker:
 
     runs-on: build-docker-image
 
