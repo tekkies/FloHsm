@@ -1,18 +1,16 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-
+## Instructions ##
 #vagrant up --provision
-#Seems to work if you pick network "Default Switch"
+#Pick network "Default Switch"
+#vagrant ssh
+#  password is "vagrant" by default
+#  Configure Github Action Runner - see https://github.com/tekkies/FloHsm/settings/actions/runners/new?arch=x64&os=win
+#    At "Enter any additional labels", enter "build-windows-exe"
+#    Use defaults for other questions
+#    If asked, replace the existing runner
 
-
-
-
-
-# All Vagrant configuration is done below. The "2" in Vagrant.configure
-# configures the configuration version (we support older styles for
-# backwards compatibility). Please don't change it unless you know what
-# you're doing.
 Vagrant.configure("2") do |config|
     config.vm.box = "gusztavvargadr/windows-10"
     config.vm.guest = :windows
