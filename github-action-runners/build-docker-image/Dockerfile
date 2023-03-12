@@ -1,7 +1,7 @@
 #1. Get the token from the code in  https://github.com/tekkies/FloHsm/settings/actions/runners/new?arch=x64&os=linux
-#2. docker build --tag flohsm-build-docker-image --progress=plain --build-arg GITHUB_TOKEN=XXXXXXXXX .
-#3. docker run --interactive --tty --name flohsm-build-docker-image flohsm-build-docker-image
-#REMOVE CONTAINER: docker rm -f flohsm-build-docker-image
+#2. docker build --tag flohsm-docker-image-builder --progress=plain --build-arg GITHUB_TOKEN=XXXXXXXXX .
+#3. docker run --interactive --tty --name flohsm-docker-image-builder flohsm-docker-image-builder
+#REMOVE CONTAINER: docker rm -f flohsm-docker-image-builder
 
 #Partsof this file based on https://testdriven.io/blog/github-actions-docker/
 FROM debian:bullseye
@@ -23,6 +23,6 @@ USER docker
 ENV RUNNER_ALLOW_RUNASROOT=1
 ARG GITHUB_TOKEN
 RUN echo GITHUB_TOKEN: ${GITHUB_TOKEN}
-RUN ./config.sh --url https://github.com/tekkies/FloHsm --token "${GITHUB_TOKEN}" --name flohsm-build-docker-image --labels flohsm-build-docker-image --replace
+RUN ./config.sh --url https://github.com/tekkies/FloHsm --token "${GITHUB_TOKEN}" --name flohsm-docker-image-builder --labels build-docker-image --replace
 
 CMD ./run.sh

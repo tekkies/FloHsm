@@ -28,7 +28,7 @@ jobs:
 
   build-docker:
 
-    runs-on: build-docker-image
+    runs-on: flohsm-docker-image-builder
 
     steps:
     - uses: actions/checkout@v3
