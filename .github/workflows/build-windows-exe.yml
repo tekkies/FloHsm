@@ -18,7 +18,10 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build Windows Exe
       run: |
-        Write-Host Building Version 0.0.0.${{ github.run_number }}
+        Write-Host Building Version 0.0.0-beta${{ github.run_number }}
         pyinstaller --noconfirm FloHsm.pyinstaller.spec
         .\dist\FloHsm\FloHsm.exe -h
+        sed -i 's/__VERSION__/1.2.3.4/g' .\Choco\flohsm.nuspec
         choco pack .\Choco\flohsm.nuspec
+        Get-ChildItem *.nupkg -Recurse | Select-Object FullName
+
