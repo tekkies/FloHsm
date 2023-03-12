@@ -19,4 +19,4 @@ jobs:
     - name: Build Windows Exe
       run: |
         pyinstaller --onefile Source/Generator/FloHsm.py
-        
+        Get-ChildItem -Recurse | Select-Object FullName
