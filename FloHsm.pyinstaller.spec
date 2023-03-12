@@ -6,7 +6,7 @@ block_cipher = None
 
 a = Analysis(
     ['Source\\Generator\\FloHsm.py'],
-    pathex=[],
+    pathex=['Source\\Generator'],
     binaries=[],
     datas=[],
     hiddenimports=[],
