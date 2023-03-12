@@ -1,6 +1,4 @@
 name: Build Windows EXE
-#Runs from Vagrant machine github-action-runners\build-windows-exe
-#  See instructions in Vagrantfile
 
 on:
   push:
@@ -12,12 +10,14 @@ jobs:
 
   build:
 
+    #Runs from Vagrant machine github-action-runners\build-windows-exe
+    #  See instructions in Vagrantfile
     runs-on: build-windows-exe
 
     steps:
     - uses: actions/checkout@v3
     - name: Build Windows Exe
       run: |
-        Write-Host Variables: ${{ vars.ENVIRONMENT_STAGE }} ${{ GITHUB_RUN_ID }} 0.0.0.${{ GITHUB_RUN_NUMBER }}
+        Write-Host Version 0.0.0.${{ vars.GITHUB_RUN_NUMBER }}
         pyinstaller --noconfirm FloHsm.pyinstaller.spec
         .\dist\FloHsm\FloHsm.exe -h
