@@ -40,16 +40,16 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <projectUrl>https://github.com/tekkies/FloHsm</projectUrl>
     <!-- There are a number of CDN Services that can be used for hosting the Icon for a package. More information can be found here: https://docs.chocolatey.org/en-us/create/create-packages#package-icon-guidelines -->
     <!-- Here is an example using Githack -->
-    <!--<iconUrl>http://rawcdn.githack.com/__REPLACE_YOUR_REPO__/master/icons/flohsm.png</iconUrl>-->
+    <iconUrl>https://raw.githubusercontent.com/tekkies/FloHsm/main/Doc/graphic.png</iconUrl>
     <!-- <copyright>Year Software Vendor</copyright> -->
     <!-- If there is a license Url available, it is required for the community feed -->
     <licenseUrl>https://raw.githubusercontent.com/tekkies/FloHsm/main/LICENSE</licenseUrl>
     <!-- <requireLicenseAcceptance>true</requireLicenseAcceptance>-->
-    <!--<projectSourceUrl>Software Source Location - is the software FOSS somewhere? Link to it with this</projectSourceUrl>-->
-    <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
+    <projectSourceUrl>https://github.com/tekkies/FloHsm</projectSourceUrl>
+    <docsUrl>https://github.com/tekkies/FloHsm</docsUrl>
     <!--<mailingListUrl></mailingListUrl>-->
     <!--<bugTrackerUrl></bugTrackerUrl>-->
-    <tags>flohsm, plantuml, code-generation</tags>
+    <tags>flohsm plantuml code-generation</tags>
     <summary>Code generation tool for C++ hierarchical state machines.</summary>
     <description>
     The basic idea is to design your state machine graphically in PlantUml and then use the PlantUml input file also as an input file for FloHsm.exe to generate C++ code.
@@ -80,5 +80,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
   </metadata>
   <files>
     <file src="..\dist\FloHsm\**" target="tools" />
+    <file src="tools\LICENSE.txt"/>
+    <file src="tools\VERIFICATION.txt"/>
   </files>
 </package>

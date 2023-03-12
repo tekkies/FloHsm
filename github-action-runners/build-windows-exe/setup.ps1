@@ -18,8 +18,11 @@ choco install -y 7zip
 choco install -y notepadplusplus
 choco install -y -params '"/GitAndUnixToolsOnPath /NoAutoCrlf"' git 
 choco install -y nugetpackageexplorer
-choco install -y sed
+choco install -y vscode
+choco install -y tortoisegit
+choco install -y ditto
 
+choco install -y sed
 choco install -y --version 3.11.0 python
 refreshenv
 python.exe -m pip install --upgrade pip

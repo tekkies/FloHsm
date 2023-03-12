@@ -1,0 +1,8 @@
+﻿VERIFICATION
+
+I'm not exactly the vendor, but I forked the repo on GitHub.
+
+My fork is https://github.com/tekkies/FloHsm
+
+I'm currently working on branch https://github.com/tekkies/FloHsm/tree/build-windows-exe to package the python project as a Windows EXE, then publish that in Chocolatey.
+

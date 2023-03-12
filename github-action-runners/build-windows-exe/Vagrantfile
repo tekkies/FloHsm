@@ -2,13 +2,16 @@
 # vi: set ft=ruby :
 
 ## Instructions ##
-#vagrant up --provision
+#vagrant up
+#vagrant provision
 #Pick network "Default Switch"
 #vagrant ssh
 #  password is "vagrant" by default
+#  Run powershell
 #  Configure Github Action Runner - see https://github.com/tekkies/FloHsm/settings/actions/runners/new?arch=x64&os=win
 #    At "Enter any additional labels", enter "build-windows-exe"
 #    Use defaults for other questions
+#    Allow to run as a service.  User: vagrant, password: vagrant
 #    If asked, replace the existing runner
 
 Vagrant.configure("2") do |config|
