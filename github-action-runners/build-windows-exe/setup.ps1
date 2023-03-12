@@ -16,7 +16,8 @@ choco install -y googlechrome
 choco install -y firefox
 choco install -y 7zip
 choco install -y notepadplusplus
-choco install git -y -params '"/GitAndUnixToolsOnPath /NoAutoCrlf"'
+choco install -y -params '"/GitAndUnixToolsOnPath /NoAutoCrlf"' git 
+choco install -y nugetpackageexplorer
 
 choco install -y --version 3.11.0 python
 refreshenv

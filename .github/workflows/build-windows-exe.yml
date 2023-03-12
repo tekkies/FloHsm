@@ -21,3 +21,4 @@ jobs:
         Write-Host Building Version 0.0.0.${{ github.run_number }}
         pyinstaller --noconfirm FloHsm.pyinstaller.spec
         .\dist\FloHsm\FloHsm.exe -h
+        choco pack .\Choco\flohsm.nuspec
