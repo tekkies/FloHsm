@@ -28,6 +28,8 @@ jobs:
 
   build-docker:
 
+    #Runs from docker container github-action-runners\build-docker-image
+    #  See instructions in Dockerfile
     runs-on: flohsm-docker-image-builder
 
     steps:

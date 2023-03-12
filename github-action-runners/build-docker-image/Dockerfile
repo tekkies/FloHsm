@@ -23,6 +23,6 @@ USER docker
 ENV RUNNER_ALLOW_RUNASROOT=1
 ARG GITHUB_TOKEN
 RUN echo GITHUB_TOKEN: ${GITHUB_TOKEN}
-RUN ./config.sh --url https://github.com/tekkies/FloHsm --token "${GITHUB_TOKEN}" --name flohsm-docker-image-builder --labels build-docker-image --replace
+RUN ./config.sh --url https://github.com/tekkies/FloHsm --token "${GITHUB_TOKEN}" --name flohsm-docker-image-builder --labels flohsm-docker-image-builder --replace
 
 CMD ./run.sh
