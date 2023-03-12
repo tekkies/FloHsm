@@ -1,4 +1,6 @@
 name: Build Windows EXE
+#Runs from Vagrant machine github-action-runners\build-windows-exe
+#  See instructions in Vagrantfile
 
 on:
   push:
