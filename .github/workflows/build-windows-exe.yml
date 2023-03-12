@@ -18,5 +18,5 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build Windows Exe
       run: |
-        pyinstaller --onefile Source/Generator/FloHsm.py
-        Get-ChildItem -Recurse | Select-Object FullName
+        pyinstaller --noconfirm FloHsm.pyinstaller.spec
+        .\dist\FloHsm\FloHsm.exe -h

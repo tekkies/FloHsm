@@ -31,3 +31,5 @@ __pycache__
 /Source/Generated/TestActionWithArgument/StateMachine.hpp
 /Source/Generated/TestActionWithArgument/States.hpp
 .vagrant/
+/build/
+/dist/
