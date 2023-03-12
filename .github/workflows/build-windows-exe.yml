@@ -26,3 +26,24 @@ jobs:
         Get-ChildItem flohsm.0.0.0-beta${{ github.run_number }}.nupkg
         #choco push .\flohsm.0.0.0-beta${{ github.run_number }}.nupkg --key ${{ secrets.CHOCOLATEY_API_KEY }} --source https://push.chocolatey.org/
 
+  build:
+
+    runs-on: build-docker-image
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag flohsm:latest;
+    - name: Publish if on main branch
+      run: |
+        echo Branch: "${{github.ref}}";
+        if [ "${{github.ref}}" = "refs/heads/main" ]; then
+          echo main branch, so publish
+          docker tag flohsm:latest tekkiesuk/flohsm:latest; 
+          docker tag flohsm:latest tekkiesuk/flohsm:0.0.0-beta${{ github.run_number }}; 
+          docker login -u tekkiesuk -p ${{ secrets.DOCKER_HUB_CRUD }};
+          docker push tekkiesuk/flohsm:latest;
+          docker push tekkiesuk/flohsm:0.0.0-beta${{ github.run_number }}; 
+        else
+          echo Skip publish;
+        fi;
