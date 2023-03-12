@@ -24,5 +24,5 @@ jobs:
         sed -i 's/__VERSION__/0.0.0-beta${{ github.run_number }}/g' .\Choco\flohsm.nuspec
         choco pack .\Choco\flohsm.nuspec
         Get-ChildItem flohsm.0.0.0-beta${{ github.run_number }}.nupkg
-        choco push .\flohsm.0.0.0-beta${{ github.run_number }}.nupkg --key ${{ secrets.CHOCOLATEY_API_KEY }} --source https://push.chocolatey.org/
+        #choco push .\flohsm.0.0.0-beta${{ github.run_number }}.nupkg --key ${{ secrets.CHOCOLATEY_API_KEY }} --source https://push.chocolatey.org/
 
