@@ -1,0 +1,16 @@
+#vagrant up
+#Pick network "Default Switch"
+#vagrant ssh
+#  password is "vagrant" by default
+#  Configure Github Action Runner - see https://github.com/tekkies/FloHsm/settings/actions/runners/new?arch=x64&os=linux
+#    At "Enter any additional labels", enter "flohsm-docker-image-builder"
+#    Use defaults for other questions
+#    If asked, replace the existing runner
+
+
+
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "gusztavvargadr/docker-linux"
+  config.vm.synced_folder '.', '/vagrant', disabled: true
+end
